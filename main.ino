@@ -1,8 +1,9 @@
 /*****************************/
 /*                           */
-/* Developed by Juan Blanc   */
+/*       Juan  Blanc         */
 /*                           */
 /*        Jan 2021           */
+/*                           */
 /*****************************/
 
 #include <ESP8266WiFi.h>
@@ -14,23 +15,21 @@ WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP);
 
 #include <LiquidCrystal_I2C.h>
-#define direccionLCD 0x27
-LiquidCrystal_I2C lcd(direccionLCD,20,4);
+#define lcdDir 0x27
+LiquidCrystal_I2C lcd(lcdDir,20,4);
+
 void setup() {
 
   Serial.begin(115200);
-  // Serial.setDebugOutput(true);
- /* Se inicializa el LCD */
-  lcd.init();
-    lcd.backlight();
+    lcd.init();
+      lcd.backlight();
      
   WiFi.mode(WIFI_STA);
-  WiFi.begin("SSID", "passwd");
+    WiFi.begin("SSID", "passwd");  /* PELASE SET IT!  */ 
   
   timeClient.begin();
-
-  lcd.setCursor(0,0);
-    lcd.print(F("Connectig to Wifi  "));
+    lcd.setCursor(0,0);
+      lcd.print(F("Connecting to Wifi "));
   
   while (WiFi.status() != WL_CONNECTED) { delay(500);  lcd.print("."); } /* This loop will print a line each time than is trying to connect to the AP */
 
@@ -59,7 +58,7 @@ lcd.print("Eastern") ;
 
 //ARS 
 timeClient.update();
-timeClient.setTimeOffset(-10800);
+timeClient.setTimeOffset(-10800); // GMT -3 : The math is -3 * 60 * 60
 lcd.setCursor(0,3);
 lcd.print(timeClient.getFormattedTime());
 lcd.setCursor(9,3);
