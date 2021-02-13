@@ -1,7 +1,7 @@
 # worldclock_LCD
 This implementation allow you to display the time of any place in the world using an ESP8266 (WeMos D1-Mini)
 
-![alt text](https://raw.githubusercontent.com/juanstdio/worldclock_LCD/main/screen.png)
+![image](https://raw.githubusercontent.com/juanstdio/worldclock_LCD/main/screen.png?token=ADRAGAO3NU4G4O3EVYI7HSTAFA3EG)
 
 ### Libraries required 
 -  __LiquidCyrstal_I2C__
