@@ -4,6 +4,7 @@ This implementation allow you to display the time of any place in the world usin
 ### Libraries required 
 -  __LiquidCyrstal_I2C__
 -  __NTPClient__
+-  __ESP 8266/ESP32__ Lib installed on the IDE
 
 
 ***Connection:***
