@@ -6,6 +6,10 @@ This implementation allow you to display the time of any place in the world usin
 -  __NTPClient__
 -  __ESP 8266/ESP32__ Lib installed on the IDE
 
+### Updates in the file to-do
+- Change your SSID Info and Password data
+- set your own __setTimeOffset__, in the project is set as 3 timezones, IST, EST and ARG(GMT-3) 
+
 
 ***Connection:***
 
